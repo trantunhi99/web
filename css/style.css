@@ -231,7 +231,7 @@ header {
   width: 200%;
   background-color: transparent;
   box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
-  -webkit-backdrop-filter: blur(15px);
+
   backdrop-filter: blur(15px);
   border-radius: 30px;
   text-align: left;
@@ -271,7 +271,7 @@ header {
  .heading_small{
   
   position: relative;
-  margin-left: 735px;
+  margin-left: 715px;
   margin-top: -120px;
  }
  .heading_small .sub-heading{
@@ -516,7 +516,19 @@ margin-top: -80px;
   .btn{
     margin-left: 400px;
    }
-  .nav-link{
+   .nav-link{
     font-size: 12px;
    }
+}
+@media (max-width: 420px){
+.research{
+  width: 370%;
+}
+.foot{
+  width: 370%;
+}
+.btn{
+  padding-top: 300px;
+  margin-left: 0;
+}
 }
