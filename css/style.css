@@ -116,9 +116,7 @@ ul {
  }
 
  .bggray{
-  background-color: transparent;
-  /*box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);*/
-  backdrop-filter: blur(170px);
+  background-color: rgb(244, 243, 243);
   margin-top: -880px;
   width: 100%;
 
@@ -278,9 +276,7 @@ header {
  }
 /* --------------- Research Section Styling --------------- */
 .research{
-  background-color: transparent;
-  box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(170px);
+  background-color: rgb(244, 243, 243);
   width: 100%;
 
 }
