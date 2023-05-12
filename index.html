@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!---<meta name="viewport" content="width=device-width, initial-scale=1.0">------>
   <title>Bioinformatics | Guangyu Wang Lab</title>
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="/assets/baby.ico">
 
 
   <!-- --------- Footer --------- -->
@@ -36,7 +36,7 @@
               <a href="software.html" class="nav-link">Software</a>
             </li>
             <li>
-              <a href="publication.html" class="nav-link">Publication</a>
+              <a href="publication.html" class="nav-link">Publications</a>
             </li>
             <li>
               <a href="news.html" class="nav-link">News</a>
@@ -76,21 +76,22 @@
         </div>
       </div>
       <div class="btn">
-      <button onclick="playVid()" type="button" class="button">▶</button>
-    <button onclick="pauseVid()" type="button" class="button pause">⏸</button><br> 
+      <button onclick="Play()" type="button" class="button">▶</button>
+    <button onclick="Play()" type="button" class="button pause">⏸</button><br> 
   </div>
     </div>  
     
     <script> 
-      var vid = document.getElementById("video"); 
-      
-      function playVid() { 
-        vid.play(); 
-      } 
-      
-      function pauseVid() { 
-        vid.pause(); 
-      } 
+      function Play()
+      {
+        var vid = document.getElementById("video");
+        if(vid.paused) {
+          vid.play();
+        }
+        else {
+          vid.pause();
+        }
+      }
     </script> 
     <!-- --------- Research Section --------- -->
     <!--EDIT TEXT HERE-->
@@ -134,8 +135,8 @@
     <!-- --------- Footer --------- -->
     <div class="foot">
       <div class="container ">
-      <a href="https://github.com/GuangyuWangLab" class="fa fa-github" style="font-size:24px"></a> <a href="" class="fa fa-linkedin-square" style="font-size:24px"></a><a href="https://twitter.com/Guangyu_Wang01" class="fa fa-twitter" style="font-size:24px"></a>
-      <p class="text">©2022 by Wang lab.</p>
+      <a href="https://github.com/GuangyuWangLab2021" class="fa fa-github" style="font-size:24px"></a> <a href="https://www.linkedin.com/in/guangyu-wang-27696819b/" class="fa fa-linkedin-square" style="font-size:24px"></a><a href="https://twitter.com/Guangyu_Wang01" class="fa fa-twitter" style="font-size:24px"></a>
+      <p class="text">©2023 by Wang lab.</p>
       <p class="text text2">Design by Tu (Alex) N Tran.</p>
     </div>
     </a>
