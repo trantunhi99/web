@@ -64,7 +64,7 @@ ul {
   font-weight: lighter;
   font-size: 25px;
   font-family: 'Source Serif Pro', serif;
-  margin-left: -340px;
+  margin-left: -320px;
   padding-top: 50px;
 }
 .foot{
@@ -88,7 +88,7 @@ ul {
  }
  
  .text{
-  margin-left: -340px;
+  margin-left: -320px;
   width: 850px;
   line-height: 2;
   font-weight: lighter;
@@ -106,6 +106,7 @@ ul {
   width: 1000px;
   background-color: transparent;
   box-shadow: 0 5px 20px 0.1px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   border-radius: 10px;
   opacity: 0;
@@ -471,6 +472,9 @@ margin-top: -80px;
   .foot .text2{
     margin-left: 370px;
   }
+  .btn{
+    margin-left: 650px;
+   }
 
 }
 
@@ -491,7 +495,9 @@ margin-top: -80px;
     width: 200%;
   }
 
-
+  .btn{
+    margin-left: 500px;
+   }
 }
 
 /* --------------- 500px Screens --------------- */
@@ -506,4 +512,7 @@ margin-top: -80px;
    .foot{
     width: 300%;
   }
+  .btn{
+    margin-left: 400px;
+   }
 }
