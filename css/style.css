@@ -516,4 +516,7 @@ margin-top: -80px;
   .btn{
     margin-left: 400px;
    }
+  .nav-link{
+    font-size: 12px;
+   }
 }
