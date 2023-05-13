@@ -278,10 +278,10 @@ header {
   font-size: 30px;
  }
  #play{
-  content: "\u25b6";
+  content: "\xe2\x96\xb6";
  }
  #pause{
-  content: "\u23f8";
+  content: "\xe2\x8f\xb8";
  }
 /* --------------- Research Section Styling --------------- */
 .research{
