@@ -277,12 +277,7 @@ header {
  .heading_small .sub-heading{
   font-size: 30px;
  }
- #play{
-  content: "\xe2\x96\xb6";
- }
- #pause{
-  content: "\xe2\x8f\xb8";
- }
+ 
 /* --------------- Research Section Styling --------------- */
 .research{
   background-color: rgb(244, 243, 243);
@@ -450,7 +445,7 @@ margin-top: -80px;
   }
   
   .btn{
-    margin-left: 650px;
+    margin-left: 1400px;
    }
 
 }
