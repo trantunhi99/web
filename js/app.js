@@ -39,9 +39,11 @@ window.onload = () => {
   function myFunction(){
     let pass = prompt("Please enter your password");
     if (pass == "000") {
+      alert("Recommend edit content in Microsoft Word, then copy to website. \nSmall heading: font:Source Serif Pro, size 19. \nText: font:Calibri Light (Headings), size 12 \n\nAfter edit, click save and upload the downloaded file in ./js/json on github page ")
       editElements.attr('contentEditable', true);
-  }
+      editElements.css('border', '1px solid blue');
 }
+  }
   function mySave() {
     var editedContents = [];
   
