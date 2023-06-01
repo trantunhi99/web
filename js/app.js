@@ -62,6 +62,7 @@ window.onload = () => {
     // Disable editing for all elements
     editElements.attr('contenteditable', 'false');
     localStorage.removeItem('contentEditable'); // Remove the state from localStorage
+    editElements.css('border', 'transparent');
   }
   
   function restoreContent() {
@@ -82,11 +83,11 @@ window.onload = () => {
       });
     }
     
-    // Retrieve the state of contenteditable from localStorage
-    var contentEditable = localStorage.getItem('contentEditable');
-    if (contentEditable === 'true') {
-      editElements.attr('contenteditable', 'true');
-    }
+    // // Retrieve the state of contenteditable from localStorage
+    // var contentEditable = localStorage.getItem('contentEditable');
+    // if (contentEditable === 'true') {
+    //   editElements.attr('contenteditable', 'true');
+    // }
   }
   
   // Restore content and state when the page is loaded
@@ -95,7 +96,7 @@ window.onload = () => {
     generateUniqueId(); // Generate a unique identifier for the page
     restoreContent();
   
-    fetch('https://trantunhi99.github.io/web/js/json/localStorageData_' + pageId + '.json')
+    fetch('http://127.0.0.1:8887/js/json/localStorageData_' + pageId + '.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('JSON file not found');
