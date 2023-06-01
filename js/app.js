@@ -96,7 +96,7 @@ window.onload = () => {
     generateUniqueId(); // Generate a unique identifier for the page
     restoreContent();
   
-    fetch('http://127.0.0.1:8887/js/json/localStorageData_' + pageId + '.json')
+    fetch('https://trantunhi99.github.io/web/js/json/localStorageData_' + pageId + '.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('JSON file not found');
