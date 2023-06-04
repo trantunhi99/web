@@ -1,31 +1,3 @@
-window.onload = () => {
-    const anchors = document.querySelectorAll('a');
-    const transition_el = document.querySelector('.transition');
-  
-    setTimeout(() => {
-      transition_el.classList.remove('is-active');
-    }, 1000);
-  
-    for (let i = 0; i < anchors.length; i++) {
-      const anchor = anchors[i];
-  
-      anchor.addEventListener('click', e => {
-        e.preventDefault();
-        let target = e.target.href;
-  
-        console.log(transition_el);
-  
-        transition_el.classList.add('is-active');
-  
-        console.log(transition_el);
-  
-        setInterval(() => {
-          window.location.href = target;
-        }, 1000);
-      })
-    }
-  }
-
 
   var editElements = $('.edit');
   var pageId; // Unique identifier for the current HTML page
@@ -92,11 +64,16 @@ window.onload = () => {
   
   // Restore content and state when the page is loaded
 
-  $(document).ready(function() {
-    generateUniqueId(); // Generate a unique identifier for the page
-    restoreContent();
   
-    fetch('https://raw.githubusercontent.com/trantunhi99/web/main/js/json/localStorageData_' + pageId + '.json')
+
+window.onload = () => {
+    const anchors = document.querySelectorAll('a');
+    const transition_el = document.querySelector('.transition');
+  
+    setTimeout(() => {
+      generateUniqueId(); // Generate a unique identifier for the page
+      restoreContent();
+      fetch('https://raw.githubusercontent.com/trantunhi99/web/main/js/json/localStorageData_' + pageId + '.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('JSON file not found');
@@ -112,6 +89,7 @@ window.onload = () => {
   
         // Display a success message or perform any other actions
         console.log('JSON file fetched and imported successfully.');
+        transition_el.classList.remove('is-active');
       })
       .catch(error => {
         console.error('Error fetching JSON file:', error);
@@ -119,4 +97,25 @@ window.onload = () => {
         var errorContainer = document.getElementById('error');
         errorContainer.textContent = 'Error: JSON file not found.';
       });
-  });
+      
+    }, 1000);
+  
+    for (let i = 0; i < anchors.length; i++) {
+      const anchor = anchors[i];
+  
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        let target = e.target.href;
+  
+        console.log(transition_el);
+  
+        transition_el.classList.add('is-active');
+  
+        console.log(transition_el);
+  
+        setInterval(() => {
+          window.location.href = target;
+        }, 1000);
+      })
+    }
+  }
