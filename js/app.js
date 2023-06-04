@@ -4,7 +4,7 @@ window.onload = () => {
   
     setTimeout(() => {
       transition_el.classList.remove('is-active');
-    }, 500);
+    }, 1000);
   
     for (let i = 0; i < anchors.length; i++) {
       const anchor = anchors[i];
@@ -21,7 +21,7 @@ window.onload = () => {
   
         setInterval(() => {
           window.location.href = target;
-        }, 500);
+        }, 1000);
       })
     }
   }
