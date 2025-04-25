@@ -1,4 +1,3 @@
-
   var editElements = $('.edit');
   var pageId; // Unique identifier for the current HTML page
   
@@ -7,11 +6,10 @@
     pageId = currentPage.replace('.html', ''); // Use the filename as the page ID
     localStorage.setItem('pageId', pageId); // Save the identifier in localStorage
   }
-
   function myFunction(){
     let pass = prompt("Please enter your password");
     if (pass == "000") {
-      alert("Recommend edit content in Microsoft Word, then copy to website. \nSmall heading: font:Source Serif Pro, size 19. \nText: font:Calibri Light (Headings), size 12 \n\nAfter edit, click save and upload the downloaded file in ./js/json on github page ")
+      alert("Recommend edit content in Microsoft Word, then copy to website.\n • Big heading: font: Source Serif Pro, size: 37.5 \n • Small heading: font:Source Serif Pro, size 21. \n • Text: font:Calibri Light (Headings), size 12 \n\nAfter edit, click save and upload the downloaded file in ./js/json on github page ")
       editElements.attr('contentEditable', true);
       editElements.css('border', '1px solid blue');
 }
@@ -23,7 +21,17 @@
       var editedContent = $(this).html();
       var key = 'newContent_' + pageId + '_' + (index + 1); // Include the pageId in the key
       localStorage.setItem(key, editedContent);
-      editedContents.push(editedContent);
+      var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+      var replacedContent = editedContent.replace(exp, function (match) {
+      var link = '<u><a href="' + match + '" class="link">' + match + '</a></u>';
+      var existingLinkCheck = '<u><a href="' + match + '" class="link">';
+      if (editedContent.includes(existingLinkCheck)) {
+        return match;
+      } else {
+        return link;
+      }
+    });
+      editedContents.push(replacedContent);
     });
   
     // Save the array of contents as a JSON string
@@ -62,9 +70,6 @@
     // }
   }
   
-  // Restore content and state when the page is loaded
-
-  
 
 window.onload = () => {
     const anchors = document.querySelectorAll('a');
@@ -73,7 +78,7 @@ window.onload = () => {
     setTimeout(() => {
       generateUniqueId(); // Generate a unique identifier for the page
       restoreContent();
-      fetch('https://raw.githubusercontent.com/trantunhi99/web/main/js/json/localStorageData_' + pageId + '.json')
+      fetch('https://raw.githubusercontent.com/GuangyuWangLab/web/updated_web/js/json/localStorageData_' + pageId + '.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('JSON file not found');
@@ -98,7 +103,7 @@ window.onload = () => {
         errorContainer.textContent = 'Error: JSON file not found.';
       });
       
-    }, 1000);
+    }, 500);
   
     for (let i = 0; i < anchors.length; i++) {
       const anchor = anchors[i];
@@ -115,7 +120,7 @@ window.onload = () => {
   
         setInterval(() => {
           window.location.href = target;
-        }, 1000);
+        }, 500);
       })
     }
   }
