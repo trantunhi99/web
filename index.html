@@ -28,7 +28,7 @@
         <div class="links" id="link">
           <ul>
             <li>
-              <a href="https://guangyuwanglab.github.io/web/" class="nav-link" >Home</a>
+              <a href="index.html" class="nav-link" >Home</a>
             </li>
             <li>
               <a href="team.html" class="nav-link" >Team</a>
@@ -99,56 +99,88 @@
     </script> 
     <!-- --------- Research Section --------- -->
     <!--EDIT TEXT HERE-->
-    <div class="research" id="home" >
-      <div class="container ">
-        <div class="content">
-            <h1 class="heading edit" id="content2">RESEARCH</h1>
-            <p class="text edit">
-              The broad goals of the research in the Wang lab are to understand:<br>
-              &emsp;• How epigenetics regulates transcriptome <br>
-              &emsp;• How transcriptional shifts affect cell states and cell/tissue level phenotypes<br>
-              To achieve our goal, we are motivated by modulating the causes of transcriptional shifts and the translational potential of identifying. We develop and apply computational tools to integrate and interpret large biomedical and molecular datasets that can uncover the regulation mechanism and the effects of the transcriptional process.
-              Specifically, we aim to utilize high-throughput multi-omics datasets, mostly based on DNA and RNA sequencing, to develop models that explain how cell state is regulated. We are especially interested in endothelial cells (ECs), covering various aspects of their biology, such as their differentiation and trans-differentiation, and the stability/plasticity of their chromatin structure and histone modification. </p>
-            <h2 class="sub-heading edit">
-              Single-cell dynamics
-            </h2>
-            <p class="text edit">
-              Single-cell transcriptomics (scRNA-seq) and single-cell epigenomics (scATAC-seq) data revolutionize the field of regulatory genomics. We combine cutting-edge computational approaches with state-of-the-art single-cell profiling to better understand cell state transitions, decode cis-regulatory programs, and predict the effect of TF perturbations in single-cell datasets and their effect on cell identity in contexts such as cell trans-differentiation and reprogramming. 
-            </p>
-            <h2 class="sub-heading edit">
-              Chromatin structure & Histone modification:
-            </h2>
-            <p class="text edit">
-              The Wang lab seeks to understand the chromatin folding of genomic DNA, which is one of the most basic and important genomic regulations in dynamic processes such as differentiation or cellular state switching. We have developed computational methods to investigate cell identity-associated TADs (topological associated domains), stripes, and loops. We initially detected split and merging of TADs comparing fibroblast to ECs and suggested these TAD splitting and merging may play important role in cell differentiation and are highly associated with histone modification alternation (Wang et al, Genome Biology, 2020). We also developed computational methods that decipher open chromatin, histone modification, and transcription factor binding genome-wide in sub-populations of cells undergoing dynamic processes such as differentiation or stochastic state switching (Wang et al, Nature Communication, 2020; Wang et al, GPB, 2021).
-            </p>
-            <h2 class="sub-heading edit">
-              AI & Machine learning
-            </h2>
-            <p class="text edit">
-              Data-driven research in Wang lab is powered by artificial intelligence (AI) and machine learning that guide us to understand more about biological systems and processes. We are currently working on:<br>
-              &emsp;1. Deep learning for transcriptome to predict cell state transition and pseudo-time based on the RNA velocity model. (Nature Biotechnology, 2023)<br>
-              &emsp;2. Transferring learning for scRNA-seq and scATAC-seq to predict therapy choice and patient outcome.<br>
-              &emsp;3. Web-based workflows of single-cell multi-omics to efficiently implement data preparation, advanced analysis, and integrative analysis of scRNA-seq and scATAC-seq.<br>
-            </div>
+  <div class="research" id="home">
+  <div class="container">
+    <div class="content">
+      <h1 class="heading edit" id="content2">RESEARCH</h1>
+
+      <div class="research-block">
+        <div class="research-block-wrapper">
+          <p class="text edit">
+            The broad goals of the research in the Wang lab are to understand:<br>
+            &emsp;• How epigenetics regulates transcriptome <br>
+            &emsp;• How transcriptional shifts affect cell states and cell/tissue level phenotypes<br>
+            To achieve our goal, we are motivated by modulating the causes of transcriptional shifts and the translational potential of identifying. We develop and apply computational tools to integrate and interpret large biomedical and molecular datasets that can uncover the regulation mechanism and the effects of the transcriptional process.
+            Specifically, we aim to utilize high-throughput multi-omics datasets, mostly based on DNA and RNA sequencing, to develop models that explain how cell state is regulated. We are especially interested in endothelial cells (ECs), covering various aspects of their biology, such as their differentiation and trans-differentiation, and the stability/plasticity of their chromatin structure and histone modification.
+          </p>
+        </div>
+      </div>
+
+      <div class="research-block" style="display: flex; align-items: flex-start; gap: 20px;">
+        <div class="research-block-wrapper" style="flex: 1;">
+          <h2 class="sub-heading edit">AI & Machine learning</h2>
+          <p class="text edit">
+            Data-driven research in Wang lab is powered by artificial intelligence (AI) and machine learning that guide us to understand more about biological systems and processes. We are currently working on:<br>
+            &emsp;1. Deep learning for transcriptome to predict cell state transition and pseudo-time based on the RNA velocity model. (Nature Biotechnology, 2023)<br>
+            &emsp;2. Transferring learning for scRNA-seq and scATAC-seq to predict therapy choice and patient outcome.<br>
+            &emsp;3. Web-based workflows of single-cell multi-omics to efficiently implement data preparation, advanced analysis, and integrative analysis of scRNA-seq and scATAC-seq.<br>
+          </p>
+        </div>
+       <div class="slider-container" style="position: relative; width: 45%; height: 500px; overflow: hidden; border-radius: 10px;">
+          <img id="slide-img" src="./assets/loki_framework.png" class="slide-img" style="width: 100%; height: 100%; object-fit: contain;" />
+
+          <div class="hover-zone left-hover" onmouseenter="changeSlide(-1)"></div>
+          <div class="hover-zone right-hover" onmouseenter="changeSlide(1)"></div>
+
+          <div class="hover-hint">Hover to change image</div>
+        </div>
+
+      </div>
+
+      <div class="research-block">
+        <div class="research-block-wrapper">
+          <h2 class="sub-heading edit">Single-cell dynamics</h2>
+          <p class="text edit">
+            Single-cell transcriptomics (scRNA-seq) and single-cell epigenomics (scATAC-seq) data revolutionize the field of regulatory genomics. We combine cutting-edge computational approaches with state-of-the-art single-cell profiling to better understand cell state transitions, decode cis-regulatory programs, and predict the effect of TF perturbations in single-cell datasets and their effect on cell identity in contexts such as cell trans-differentiation and reprogramming.
+          </p>
+        </div>
+      </div>
+
+      <div class="research-block">
+        <div class="research-block-wrapper">
+          <h2 class="sub-heading edit">Chromatin structure & Histone modification:</h2>
+          <p class="text edit">
+            The Wang lab seeks to understand the chromatin folding of genomic DNA, which is one of the most basic and important genomic regulations in dynamic processes such as differentiation or cellular state switching. We have developed computational methods to investigate cell identity-associated TADs (topological associated domains), stripes, and loops. We initially detected split and merging of TADs comparing fibroblast to ECs and suggested these TAD splitting and merging may play important role in cell differentiation and are highly associated with histone modification alternation (Wang et al, Genome Biology, 2020). We also developed computational methods that decipher open chromatin, histone modification, and transcription factor binding genome-wide in sub-populations of cells undergoing dynamic processes such as differentiation or stochastic state switching (Wang et al, Nature Communication, 2020; Wang et al, GPB, 2021).
+          </p>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+
     <script>
       
     </script>
   </main>
 
-  <footer>
+   <footer>
     <!-- --------- Footer --------- -->
-    <div class="foot">
-      <div class="container ">
-      
-      <a href="https://github.com/GuangyuWangLab2021" class="fa fa-github" style="font-size:24px"></a> <a href="https://www.linkedin.com/in/guangyu-wang-27696819b/" class="fa fa-linkedin-square" style="font-size:24px"></a><a href="https://twitter.com/Guangyu_Wang01" class="fa fa-twitter" style="font-size:24px"></a>
-      <p class="text">©2023 by Wang lab.</p>
-      <p class="text text2">Design by Tu (Alex) N Tran.</p>
-      
+  <div class="foot">
+  <div class="container footer-content">
+    <div class="footer-icons">
+      <a href="https://github.com/GuangyuWangLab2021" class="fa fa-github" style="font-size:24px"></a>
+      <a href="https://www.linkedin.com/in/guangyu-wang-27696819b/" class="fa fa-linkedin-square" style="font-size:24px"></a>
+      <a href="https://twitter.com/Guangyu_Wang01" class="fa fa-twitter" style="font-size:24px"></a>
     </div>
-    <button id="edit" onclick="myFunction()">edit</button>
-    <button id="edit" onclick="mySave()">save</button>
+    <p class="text">©2023 by Wang lab.</p>
+    <p class="text text2">Design by Tu (Alex) N Tran.</p>
+  
+    <button id="editBtn" class="edit-btn" onclick="myFunction()">Edit</button>
+    <button id="saveBtn" class="edit-btn" style="display:none;" onclick="mySave()">Save</button>
+    <button id="disableBtn" class="edit-btn" style="display:none;" onclick="disableRestore()">Disable Restore</button>
+    <button id="enableBtn" class="edit-btn" style="display:none;" onclick="enableRestore()">Enable Restore</button>
+  </div>
   </div>
   
   </footer>

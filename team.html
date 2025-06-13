@@ -24,7 +24,7 @@
         <div class="links" id="link">
           <ul>
             <li>
-              <a href="https://guangyuwanglab.github.io/web/" class="nav-link" >Home</a>
+              <a href="index.html" class="nav-link" >Home</a>
             </li>
             <li>
               <a href="team.html" class="nav-link" >Team</a>
@@ -134,16 +134,21 @@ Previously, Weiqing was a master’s student at Graduate School of Biostudies (S
 
   <footer>
     <!-- --------- Footer --------- -->
-    <div class="foot">
-      <div class="container ">
-      
-      <a href="https://github.com/GuangyuWangLab2021" class="fa fa-github" style="font-size:24px"></a> <a href="https://www.linkedin.com/in/guangyu-wang-27696819b/" class="fa fa-linkedin-square" style="font-size:24px"></a><a href="https://twitter.com/Guangyu_Wang01" class="fa fa-twitter" style="font-size:24px"></a>
-      <p class="text">©2023 by Wang lab.</p>
-      <p class="text text2">Design by Tu (Alex) N Tran.</p>
-      
+  <div class="foot">
+  <div class="container footer-content">
+    <div class="footer-icons">
+      <a href="https://github.com/GuangyuWangLab2021" class="fa fa-github" style="font-size:24px"></a>
+      <a href="https://www.linkedin.com/in/guangyu-wang-27696819b/" class="fa fa-linkedin-square" style="font-size:24px"></a>
+      <a href="https://twitter.com/Guangyu_Wang01" class="fa fa-twitter" style="font-size:24px"></a>
     </div>
-    <button id="edit" onclick="myFunction()">edit</button>
-    <button id="edit" onclick="mySave()">save</button>
+    <p class="text">©2023 by Wang lab.</p>
+    <p class="text text2">Design by Tu (Alex) N Tran.</p>
+  
+    <button id="editBtn" class="edit-btn" onclick="myFunction()">Edit</button>
+    <button id="saveBtn" class="edit-btn" style="display:none;" onclick="mySave()">Save</button>
+    <button id="disableBtn" class="edit-btn" style="display:none;" onclick="disableRestore()">Disable Restore</button>
+    <button id="enableBtn" class="edit-btn" style="display:none;" onclick="enableRestore()">Enable Restore</button>
+  </div>
   </div>
   
   </footer>
