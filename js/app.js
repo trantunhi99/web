@@ -101,7 +101,7 @@ window.onload = () => {
     if (!disable) {
       restoreContent();
 
-      fetch('http://localhost:8000/js/json/localStorageData_' + pageId + '.json')
+      fetch('https://trantunhi99.github.io/web/js/json/localStorageData_' + pageId + '.json')
         .then(response => {
           if (!response.ok) throw new Error('JSON file not found');
           return response.json();
