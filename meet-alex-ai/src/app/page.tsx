@@ -129,7 +129,7 @@ function SkillsPanel() {
           <div className="h-[2px] bg-white/10 rounded">
             <motion.div
               className="h-full rounded"
-              style={{ background: 'linear-gradient(90deg, #3b82f6, #c084fc)', boxShadow: '0 0 6px #c084fc' }}
+              style={{ background: 'linear-gradient(90deg, #c8a06a, #ece3d2)', boxShadow: '0 0 6px #ece3d2' }}
               initial={{ width: 0 }}
               animate={{ width: `${s.pct}%` }}
               transition={{ duration: 0.8, delay: i * 0.08, ease: 'easeOut' }}
@@ -152,7 +152,7 @@ function ProjectsPanel() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="bg-[#13171f]/80 backdrop-blur-xl rounded-xl border border-white/10 p-4"
+            className="bg-[#170c11]/80 backdrop-blur-xl rounded-xl border border-white/10 p-4"
             style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.3)' }}
           >
             <div className="flex justify-between items-start mb-1">
@@ -182,7 +182,7 @@ function ResearchPanel() {
           initial={{ opacity: 0, x: -12 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: i * 0.15 }}
-          className="bg-[#13171f]/80 backdrop-blur-xl rounded-xl border border-white/10 p-5 mb-4"
+          className="bg-[#170c11]/80 backdrop-blur-xl rounded-xl border border-white/10 p-5 mb-4"
           style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.3)' }}
         >
           <div className="flex justify-between mb-2">
@@ -215,7 +215,7 @@ function ExperiencePanel() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.15 }}
-          className="bg-[#13171f]/80 backdrop-blur-xl rounded-xl border border-white/10 p-5 mb-4"
+          className="bg-[#170c11]/80 backdrop-blur-xl rounded-xl border border-white/10 p-5 mb-4"
           style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.3)' }}
         >
           <div className="flex justify-between items-start mb-1">
@@ -272,7 +272,7 @@ function EducationPanel() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.15 }}
-          className="bg-[#13171f]/80 backdrop-blur-xl rounded-xl border border-white/10 p-5 mb-4"
+          className="bg-[#170c11]/80 backdrop-blur-xl rounded-xl border border-white/10 p-5 mb-4"
           style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.3)' }}
         >
           <div className="text-white text-base font-semibold mb-1 leading-tight">{edu.degree}</div>
@@ -320,7 +320,7 @@ function OverviewPanel() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: i * 0.07 }}
-            className="bg-[#13171f]/60 backdrop-blur-md rounded-lg border border-white/5 p-3"
+            className="bg-[#170c11]/60 backdrop-blur-md rounded-lg border border-white/5 p-3"
           >
             <div className="text-teal-600 text-[11px] uppercase font-semibold tracking-wider mb-1">{s.label}</div>
             <div className="text-white text-xs">{s.value}</div>
@@ -405,7 +405,7 @@ export default function App() {
   };
 
   return (
-    <div className="w-full h-[100dvh] bg-[#05070a] overflow-hidden relative text-white">
+    <div className="w-full h-[100dvh] bg-[#0a0609] overflow-hidden relative text-white">
       {/* WebGL Canvas */}
       <div className="absolute inset-0 z-0">
         <Canvas>
@@ -451,7 +451,7 @@ export default function App() {
                 transition={{ duration: 0.5, ease: 'easeOut' }}
                 className="pointer-events-none md:ml-auto w-full md:max-w-sm h-1/2 md:h-full flex-1 min-h-0"
               >
-                <div className="border border-white/10 flex flex-col h-full max-h-full min-h-0 py-2 bg-[#05070a]/92 md:bg-transparent backdrop-blur-[48px] md:backdrop-blur-none rounded-xl md:rounded-none px-3 md:px-0 md:border-0 md:border-l md:border-white/10 md:pl-4">
+                <div className="border border-white/10 flex flex-col h-full max-h-full min-h-0 py-2 bg-[#0a0609]/92 md:bg-transparent backdrop-blur-[48px] md:backdrop-blur-none rounded-xl md:rounded-none px-3 md:px-0 md:border-0 md:border-l md:border-white/10 md:pl-4">
                   <div className="flex items-center justify-between mb-3 flex-shrink-0 mt-2 md:mt-0">
                     <div className="text-purple-400 text-xs tracking-wider font-bold uppercase">System Narration</div>
                     <button 
@@ -462,7 +462,7 @@ export default function App() {
                       {isSoundMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
                     </button>
                   </div>
-                  <div className="overflow-y-auto pr-2 pointer-events-auto min-h-0 flex-1" style={{ scrollbarWidth: 'thin', scrollbarColor: '#c084fc transparent' }}>
+                  <div className="overflow-y-auto pr-2 pointer-events-auto min-h-0 flex-1" style={{ scrollbarWidth: 'thin', scrollbarColor: '#ece3d2 transparent' }}>
                     <p className="text-white text-sm leading-relaxed whitespace-pre-wrap font-medium">
                       <TypewriterText text={narratorText} isMuted={isSoundMuted} />
                     </p>
@@ -497,7 +497,7 @@ export default function App() {
                   }, 50);
                 }}
                 disabled={isLoading}
-                className="text-[11px] uppercase font-semibold px-3 py-1.5 border border-white/10 rounded-full text-white/70 hover:border-blue-500/50 hover:text-blue-400 hover:bg-[#13171f]/80 transition-all disabled:opacity-30"
+                className="text-[11px] uppercase font-semibold px-3 py-1.5 border border-white/10 rounded-full text-white/70 hover:border-blue-500/50 hover:text-blue-400 hover:bg-[#170c11]/80 transition-all disabled:opacity-30"
               >
                 {prompt}
               </button>
@@ -515,7 +515,7 @@ export default function App() {
               onChange={(e) => setInput(e.target.value)}
               disabled={isLoading}
               placeholder="Ask me anything... try 'projects', 'skills', 'research'..."
-              className="w-full bg-[#13171f]/80 backdrop-blur-2xl border border-white/10 rounded-xl mb-4 text-white placeholder-white/30 px-4 py-3 focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/30 transition-all text-sm shadow-xl"
+              className="w-full bg-[#170c11]/80 backdrop-blur-2xl border border-white/10 rounded-xl mb-4 text-white placeholder-white/30 px-4 py-3 focus:outline-none focus:border-pink-500/60 focus:ring-1 focus:ring-pink-500/30 transition-all text-sm shadow-xl"
             />
             <button
               type="submit"

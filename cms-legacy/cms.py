@@ -1,14 +1,34 @@
 import json
 import os
+import shutil
+import sys
+import time
 import urllib.parse
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
 # Resolve paths relative to this script's location, regardless of where you run it from
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # .../cms/
-ROOT_DIR = os.path.dirname(BASE_DIR)                   # .../personal/
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # .../cms-legacy/
+ROOT_DIR = os.path.dirname(BASE_DIR)                   # .../web/
 
 CONTENT_FILE = os.path.join(BASE_DIR, 'content.json')
-HTML_FILE     = os.path.join(ROOT_DIR, 'index.html')
+
+# ---------------------------------------------------------------------------
+# RETIRED. The live site is now the hand-authored redesign:
+#   index.html + css/portfolio.css + js/portfolio.js
+#
+# generate_index_html() below still emits the OLD pre-redesign design. Writing
+# it to the repo root would silently destroy the redesign, so by default this
+# script now writes to cms-legacy/index.legacy.html — a harmless preview that
+# leaves the live site alone.
+#
+# To deliberately publish the old design over the live one:
+#   python3 cms.py --force
+# A timestamped backup of index.html is taken first.
+# ---------------------------------------------------------------------------
+FORCE_PUBLISH = '--force' in sys.argv
+LIVE_HTML     = os.path.join(ROOT_DIR, 'index.html')
+PREVIEW_HTML  = os.path.join(BASE_DIR, 'index.legacy.html')
+HTML_FILE     = LIVE_HTML if FORCE_PUBLISH else PREVIEW_HTML
 
 def generate_index_html(data):
     # Header & Nav
@@ -313,8 +333,18 @@ def generate_index_html(data):
 </body>
 </html>
 """
+    if HTML_FILE == LIVE_HTML and os.path.exists(LIVE_HTML):
+        backup = LIVE_HTML + '.bak-' + time.strftime('%Y%m%d-%H%M%S')
+        shutil.copy2(LIVE_HTML, backup)
+        print("⚠️  Overwriting the LIVE index.html. Backup → " + os.path.basename(backup))
+
     with open(HTML_FILE, 'w') as f:
         f.write(html)
+
+    if HTML_FILE == PREVIEW_HTML:
+        print("ℹ️  Legacy CMS: wrote preview → cms-legacy/index.legacy.html")
+        print("   The live index.html (redesign) was NOT touched.")
+        print("   Re-run with --force only if you really want the old design published.")
 
 
 def get_admin_ui():
@@ -608,6 +638,9 @@ class CMSHandler(SimpleHTTPRequestHandler):
 if __name__ == '__main__':
     host = '127.0.0.1'
     port = 5000
+    if not FORCE_PUBLISH:
+        print("⚠️  RETIRED CMS — this builds the OLD pre-redesign design.")
+        print("   Deploy writes to cms-legacy/index.legacy.html, not the live index.html.")
     print(f"✅ Website preview running at → http://{host}:{port}/")
     print(f"✅ CMS Builder running at   → http://{host}:{port}/admin")
     print("Press Ctrl+C to stop.")

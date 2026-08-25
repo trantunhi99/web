@@ -25,7 +25,7 @@ export function Node({ position, color, label, id, onClick, isActive }: any) {
         <meshStandardMaterial color={color} emissive={color} emissiveIntensity={isActive ? 2 : 0.8} wireframe />
       </mesh>
       
-      <Text position={[0, -1, 0]} fontSize={0.3} color="white" anchorX="center" anchorY="middle">
+      <Text position={[0, -1, 0]} fontSize={0.3} color="#f0eae1" anchorX="center" anchorY="middle">
         {label}
       </Text>
     </group>

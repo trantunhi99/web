@@ -1,16 +1,71 @@
 @import "tailwindcss";
 
+/* ============================================================
+   Lux palette — mirrors the main site (css/lux.css + base)
+   ============================================================ */
 :root {
-  --background: #05070a;
-  --foreground: #f0f6fc;
+  --background: #0a0609;
+  --foreground: #f0eae1;
+
+  --bg-2:       #170c11;
+  --gold:       #b08d57;
+  --brass:      #c8a06a;
+  --gold-light: #cdb389;
+  --pearl:      #ece3d2;
+  --ivory:      #f0eae1;
+  --stone:      #9a8f86;
+  --dim:        #635a54;
+  --oxblood:    #5c1526;
+  --wine:       #6e1828;
+  --grad:       linear-gradient(110deg, #b08d57, #ece3d2 48%, #c8a06a);
 }
 
 @theme inline {
-  --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'SF Mono', 'Courier New', monospace;
+  --font-sans:    var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-mono:    var(--font-space-mono), 'Space Mono', 'SF Mono', monospace;
+}
+
+/* ------------------------------------------------------------
+   Remap the Tailwind scales this app uses onto the lux palette,
+   so existing utility classes restyle without touching the JSX.
+   Accent scales (blue/teal/purple/pink/emerald) -> one gold ramp.
+   ------------------------------------------------------------ */
+@theme {
+  /* neutrals -> warm stone */
+  --color-gray-50:  #f5f0ea;  --color-neutral-50:  #f5f0ea;
+  --color-gray-100: #e8e1d8;  --color-neutral-100: #e8e1d8;
+  --color-gray-200: #d5cbc0;  --color-neutral-200: #d5cbc0;
+  --color-gray-300: #bdb2a7;  --color-neutral-300: #bdb2a7;
+  --color-gray-400: #9a8f86;  --color-neutral-400: #9a8f86;
+  --color-gray-500: #7f746b;  --color-neutral-500: #7f746b;
+  --color-gray-600: #635a54;  --color-neutral-600: #635a54;
+  --color-gray-700: #47403b;  --color-neutral-700: #47403b;
+  --color-gray-800: #2e2429;  --color-neutral-800: #2e2429;
+  --color-gray-900: #170c11;  --color-neutral-900: #170c11;
+  --color-gray-950: #0a0609;  --color-neutral-950: #0a0609;
+
+  /* accents -> antique gold */
+  --color-blue-50:  #f7f2e9; --color-teal-50:  #f7f2e9; --color-purple-50:  #f7f2e9; --color-pink-50:  #f7f2e9; --color-emerald-50:  #f7f2e9;
+  --color-blue-100: #ece3d2; --color-teal-100: #ece3d2; --color-purple-100: #ece3d2; --color-pink-100: #ece3d2; --color-emerald-100: #ece3d2;
+  --color-blue-200: #ddcfb4; --color-teal-200: #ddcfb4; --color-purple-200: #ddcfb4; --color-pink-200: #ddcfb4; --color-emerald-200: #ddcfb4;
+  --color-blue-300: #cdb389; --color-teal-300: #cdb389; --color-purple-300: #cdb389; --color-pink-300: #cdb389; --color-emerald-300: #cdb389;
+  --color-blue-400: #c8a06a; --color-teal-400: #c8a06a; --color-purple-400: #c8a06a; --color-pink-400: #c8a06a; --color-emerald-400: #c8a06a;
+  --color-blue-500: #b08d57; --color-teal-500: #b08d57; --color-purple-500: #b08d57; --color-pink-500: #b08d57; --color-emerald-500: #b08d57;
+  --color-blue-600: #96784a; --color-teal-600: #96784a; --color-purple-600: #96784a; --color-pink-600: #96784a; --color-emerald-600: #96784a;
+  --color-blue-700: #7a613b; --color-teal-700: #7a613b; --color-purple-700: #7a613b; --color-pink-700: #7a613b; --color-emerald-700: #7a613b;
+  --color-blue-800: #5e4a2d; --color-teal-800: #5e4a2d; --color-purple-800: #5e4a2d; --color-pink-800: #5e4a2d; --color-emerald-800: #5e4a2d;
+  --color-blue-900: #40331f; --color-teal-900: #40331f; --color-purple-900: #40331f; --color-pink-900: #40331f; --color-emerald-900: #40331f;
+  --color-blue-950: #241c11; --color-teal-950: #241c11; --color-purple-950: #241c11; --color-pink-950: #241c11; --color-emerald-950: #241c11;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Display serif on headings + mono labels, mirroring the site's lux layer */
+h1, h2, h3, h4 {
+  font-family: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  letter-spacing: -0.015em;
 }

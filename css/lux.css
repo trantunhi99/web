@@ -1,0 +1,31 @@
+/* Luxury refinement layer — restraint over shine */
+:root{--font-display:'Cormorant Garamond',Georgia,serif;--gold:#b08d57;--ivory:#f0eae1}
+
+/* Solid ivory display type; gold as an inline hairline accent, never a shiny gradient fill */
+.hero h1,.section-title,.featured-title,.contact-lead,h2,h3{font-family:var(--font-display);letter-spacing:-.015em;font-weight:400}
+.hero h1{font-size:clamp(3.4rem,11vw,9rem);line-height:.95;font-weight:300}
+.hero h1 .grad,.contact-lead .grad{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--ivory);font-style:italic;font-weight:400}
+.section-title .grad,.featured-title .grad{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--gold);font-style:italic}
+.bridge-text{font-family:var(--font-display);font-weight:300}
+.bridge-text .grad{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--gold);font-style:italic}
+
+/* Kill the glow — luxury is matte */
+.btn-primary{background:none;border:1px solid rgba(176,141,87,.55);color:var(--gold);box-shadow:none}
+.btn-primary:hover{background:rgba(176,141,87,.08);border-color:var(--gold);box-shadow:none;transform:none}
+.ai-fab{background:rgba(10,6,9,.85);border:1px solid rgba(176,141,87,.4);color:var(--gold);box-shadow:none;backdrop-filter:blur(10px)}
+.ai-fab:hover{box-shadow:none;transform:translateY(-2px);background:rgba(176,141,87,.1)}
+.ai-fab .ping{display:none}
+.scroll-progress i{box-shadow:none;background:var(--gold)}
+.hero-status .pulse{animation:none;box-shadow:none;background:var(--gold)}
+.nebula{opacity:.5}
+
+/* Hero chips: quieter, and out of the headline's way */
+.hero-chips .chip{background:none;border-color:rgba(240,234,225,.11);color:rgba(240,234,225,.46);backdrop-filter:none;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase}
+.hero-chips .chip:nth-child(1){top:14%!important;left:auto!important;right:8%!important}
+.hero-chips .chip:nth-child(3){bottom:26%!important;left:6%!important;right:auto!important}
+.hero-chips .chip:nth-child(4){bottom:auto!important;top:52%!important;right:6%!important}
+
+/* Small caps mono labels in gold — the accent's real job */
+.eyebrow,.card-label,.section-label{color:var(--gold);letter-spacing:.28em}
+.hero-status{letter-spacing:.1em;font-size:.72rem}
+a{color:var(--gold)}a:hover{color:var(--ivory)}

@@ -1,441 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu N (Alex) Tran | Engineering Data Science</title>
-    <meta name="description" content="Portfolio of Tu N (Alex) Tran, a Data Science graduate student.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="assets/media/favicon.svg?v=3">
-    <link rel="stylesheet" href="css/styles.css?v=8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu N (Alex) Tran | Engineering Data Science</title>
+<meta name="description" content="Portfolio of Tu N (Alex) Tran, a Data Science graduate student.">
+<link rel="icon" type="image/svg+xml" href="assets/media/favicon.svg?v=3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/portfolio.css">
+<link rel="stylesheet" href="css/story.css">
+<link rel="stylesheet" href="css/lux.css">
 </head>
 <body>
-    <canvas id="data-canvas"></canvas>
-    <nav class="navbar">
-        <div class="nav-content">
-            <a href="#" class="logo">Alex.</a>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://guangyuwanglab.github.io/web/index.html" target="_blank" rel="noopener noreferrer" class="nav-lab-link">🔗 Lab Website</a></li>
-            </ul>
-        </div>
-    </nav>
-    <main>
-        <section id="hero" class="hero fade-in">
-            <div class="hero-content">
-                <h1>Tu N (Alex) Tran</h1>
-                <h4 style="color: var(--accent); font-family: monospace; margin-bottom: 1rem; font-size: 1.1rem; letter-spacing: 0.05em;">Houston, TX</h4>
-                <h2>Graduate student in Engineering Data Science and AI building intelligent tools for biological and multimodal data analysis.</h2>
-                <div class="hero-actions" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#featured" class="btn btn-primary">See Loki in Action</a>
-                    <a href="#projects" class="btn btn-outline">All Projects</a>
-                    <a href="Resume/TuNTran_Resume_DataScience.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border-color: var(--accent); color: var(--accent);">Download Resume</a>
-                </div>
-            </div>
-        </section>
 
-        <section id="featured" class="fade-in">
-            <div class="section-container" style="max-width: 1200px;">
-                <h2 class="section-title">Interactive Web Platform for Loki — Whole-Slide Image Analysis</h2>
-                <div class="featured-showcase">
-                    <div class="showcase-text">
-                        <a href="https://www.nature.com/articles/s41592-025-02707-1" target="_blank" rel="noopener noreferrer" class="pub-badge">📄 Nature Methods (2025) — Co-author</a>
-                        <p>Engineering a full-stack interactive platform on top of Loki, a published AI framework (Nature Methods, 2025) for spatial transcriptomics and histopathology. The platform enables researchers to run deep learning inference on gigapixel whole-slide H&amp;E images directly from the browser — no local Python environment or CLI required.</p>
-                        <ul class="research-list">
-                            <li>Built a Dash/React frontend that interfaces with Loki’s deep learning inference pipeline for nuclei segmentation and cell-type annotation on whole-slide histopathology images.</li>
-                            <li>Streamed and rendered gigapixel whole-slide images interactively in the browser with color-coded cell-type overlays.</li>
-                            <li>Integrated an LLM-powered AI chatbot for on-demand pathological interpretation of segmented cell types and tissue microenvironments.</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>Python</span>
-                            <span>Dash</span>
-                            <span>React</span>
-                            <span>HPC AI</span>
-                        </div>
-                    </div>
-                    <div class="video-wrapper" id="video-thumb" title="Click to expand" style="cursor: pointer;">
-                        <div class="browser-bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                        <div class="video-expand-hint">⛶ Click to expand</div>
-                        <video autoplay loop muted playsinline>
-                            <source src="assets/media/video-output-93379EFF-196A-41BA-AFCC-0204CE584930-3.MP4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- background layers -->
+<canvas id="bg-canvas"></canvas>
+<div class="nebula"><span class="n1"></span><span class="n2"></span><span class="n3"></span></div>
+<div class="grain"></div>
 
-        <section id="about" class="fade-in">
-            <div class="section-container">
-                <h2 class="section-title">Summary</h2>
-                <div class="about-grid">
-                    <div class="about-image"><img src="assets/media/Alex.png" alt="Tu N (Alex) Tran"></div>
-                    <div class="about-text">
-                        <p>I am a Graduate student in Engineering Data Science and AI with experience applying statistical modeling, machine learning, and data visualization to biological and engineering problems.</p>
-                        <p>I am highly skilled in Python, R, SQL (in progress), and cloud-based workflows. My core expertise lies in building end-to-end pipelines, cleaning and structuring large datasets, and developing precise interactive dashboards.</p>
-                        <p>Currently, I am seeking a Data Science internship to leverage my analytical skills and programming expertise for data-driven decision making.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="education" class="fade-in">
-            <div class="section-container">
-                <h2 class="section-title">Education</h2>
-                <div class="experience-block">
-                    <div class="experience-header">
-                        <div class="experience-title"><h3>Master of Science in Engineering Data Science and AI</h3><h4>University of Houston, Cullen College of Engineering</h4></div>
-                        <div class="experience-date">Expected January 2027</div>
-                    </div>
-                    <ul class="experience-list">
-                        <li><strong>GPA:</strong> 3.63</li>
-                        <li>Houston, TX</li>
-                    </ul>
-                </div>
-                <div class="experience-block">
-                    <div class="experience-header">
-                        <div class="experience-title"><h3>Bachelor of Science in Mathematics</h3><h4>University of Massachusetts Lowell</h4></div>
-                        <div class="experience-date">Aug 2017 – Aug 2021</div>
-                    </div>
-                    <ul class="experience-list">
-                        <li><strong>Minor:</strong> Finance</li>
-                        <li>Dean’s List 2020–2021</li>
-                        <li><strong>GPA:</strong> 3.135</li>
-                        <li>Lowell, MA</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section id="projects" class="fade-in">
-            <div class="section-container">
-                <h2 class="section-title">Relevant Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-content">
-                            <span class="project-tag">Fullstack Platform (HM)</span>
-                            <h3>Loki Interactive Inference Platform</h3>
-                            <p>Developed a full-stack web platform for spatial transcriptomics and histopathology. Built a Dash/React interface for deep learning inference on gigapixel H&E images directly from the browser.</p>
-                            <div class="tech-stack">
-                                <span>Dash</span>
-                                <span>React</span>
-                                <span>AI</span>
-                                <span>Nature Methods ⭐</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <span class="project-tag">Data Visualization (HM)</span>
-                            <h3>Mjolnir</h3>
-                            <p>Built an interactive data visualization platform using Python (Dash, Plotly) for exploration of multimodal datasets. Integrated gigapixel histology images with gene expression and pathway analysis to enable intuitive exploration by non-technical users.</p>
-                            <div class="tech-stack">
-                                <span>Python</span>
-                                <span>Dash</span>
-                                <span>Plotly</span>
-                                <span>Nature Communications</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <span class="project-tag">Data Integration (HM)</span>
-                            <h3>Visual–Omics Curation</h3>
-                            <p>Curated a multimodal dataset linking histology images with spatial gene expression across 32 organs. Built diagnostics to evaluate machine learning models, heavily contributing to a Nature Methods publication.</p>
-                            <div class="tech-stack">
-                                <span>Curation</span>
-                                <span>Diagnostics</span>
-                                <span>Python</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-content">
-                            <span class="project-tag">Bioinformatics (HM)</span>
-                            <h3>Macrophage Analysis</h3>
-                            <p>Applied Leiden clustering and UMAP to identify and interpret immune cell subtypes from single-cell datasets. Developed Python pipelines for reproducible exploratory analysis.</p>
-                            <div class="tech-stack">
-                                <span>UMAP</span>
-                                <span>Leiden</span>
-                                <span>Python</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="experience" class="fade-in">
-            <div class="section-container">
-                <h2 class="section-title">Work Experience</h2>
-                <div class="experience-block">
-                    <div class="experience-header">
-                        <div class="experience-title"><h3>Research Assistant – Cardiovascular Regeneration Program</h3><h4>Houston Methodist, Dr. Guangyu Wang Lab</h4></div>
-                        <div class="experience-date">Dec 2022 – Present</div>
-                    </div>
-                    <ul class="experience-list">
-                        <li>Built data pipelines for large-scale single-cell and spatial omics datasets to support machine learning model development and evaluation.</li>
-                        <li>Applied unsupervised learning and statistical analysis to identify patterns in high-dimensional biological data.</li>
-                        <li>Assessed model predictions and validated outputs against biological signals to ensure reliability and interpretability.</li>
-                        <li>Developed interactive dashboards for visualization and interpretation of model results by research teams.</li>
-                        <li>Contributed to a Nature Methods publication on AI-driven multimodal analysis.</li>
-                    </ul>
-                </div>
-                <div class="experience-block">
-                    <div class="experience-header">
-                        <div class="experience-title"><h3>Marketing & Data Intern</h3><h4>Viet Power Solutions JSC (Vietnam)</h4></div>
-                        <div class="experience-date">Jan 2022 – Aug 2022</div>
-                    </div>
-                    <ul class="experience-list">
-                        <li>Monitored digital engagement metrics with Google Analytics and optimized campaigns for +39.5% performance improvement.</li>
-                        <li>Designed and launched targeted LinkedIn, Facebook, and Google Ads campaigns, raising user engagement by 50%.</li>
-                        <li>Produced clear, data-driven reports to inform leadership and refine product strategy.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section id="publications" class="fade-in">
-            <div class="section-container" style="padding-top: 2rem;">
-                <h2 class="section-title">Publications</h2>
-                <div class="publications-list">
-                    <div class="publication-item">
-                        <a href="https://doi.org/10.1038/s41592-025-02707-1" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary);">
-                            <strong>A visual–omics foundation model to bridge histopathology with spatial transcriptomics</strong>
-                        </a><br>
-                        <span style="color: var(--text-secondary);">Chen W., Zhang P., <u>Tran T. N.</u>, et al. (2025). <em>Nature Methods</em>. <a href="https://doi.org/10.1038/s41592-025-02707-1" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">doi:10.1038/s41592-025-02707-1</a></span>
-                    </div>
-                    <div class="publication-item">
-                        <a href="https://doi.org/10.1038/s41467-025-62593-1" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary);">
-                            <strong>Thor: a platform for cell-level investigation of spatial transcriptomics and histology</strong>
-                        </a><br>
-                        <span style="color: var(--text-secondary);">Zhang P., Chen W., <u>Tran T. N.</u>, et al. (2025). <em>Nature Communications</em>, 16, 7178. <a href="https://doi.org/10.1038/s41467-025-62593-1" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">doi:10.1038/s41467-025-62593-1</a></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="skills" class="fade-in">
-            <div class="section-container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming</h3>
-                        <ul>
-                            <li>Python (Pandas, NumPy, SciPy, scikit-learn, Plotly, Dash)</li>
-                            <li>R (tidyverse, Seurat)</li>
-                            <li>HTML/CSS</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Data Science</h3>
-                        <ul>
-                            <li>Data Wrangling</li>
-                            <li>Statistical Modeling & Hypothesis Testing</li>
-                            <li>Clustering & Dimensionality Reduction</li>
-                            <li>Pathway Enrichment</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Machine Learning</h3>
-                        <ul>
-                            <li>scikit-learn</li>
-                            <li>Trajectory Inference</li>
-                            <li>Model Diagnostics</li>
-                            <li>Evaluation Metrics</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Data Engineering</h3>
-                        <ul>
-                            <li>Snakemake & Git</li>
-                            <li>Linux & AWS (EC2/S3)</li>
-                            <li>Data Preprocessing & Automation</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Visualization</h3>
-                        <ul>
-                            <li>Dash/Plotly</li>
-                            <li>Matplotlib, Seaborn</li>
-                            <li>Interactive Dashboards</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>In Progress</h3>
-                        <ul>
-                            <li>SQL</li>
-                            <li>A/B Testing</li>
-                            <li>Tableau / Looker</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="fade-in">
-            <div class="section-container">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact-content">
-                    <p>I am seeking a Data Science internship to leverage my analytical skills and programming expertise for data-driven decision making. Let's connect!</p>
-                    <div class="contact-links">
-                        <a href="mailto:ttran177@uh.edu" class="btn btn-outline contact-btn" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a>
-                        <a href="tel:3465150455" class="btn btn-outline contact-btn" aria-label="Phone"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a>
-                        <a href="https://linkedin.com/in/tuntran271299" target="_blank" rel="noopener noreferrer" class="btn btn-outline contact-btn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- scroll progress -->
+<div class="scroll-progress"><i></i></div>
 
-    <!-- Floating AI Widget -->
-    <a href="ai.html" id="ai-nav-btn" class="floating-ai-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path>
-            <path d="M12 8a6 6 0 0 0-6 6v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4a6 6 0 0 0-6-6z"></path>
-            <path d="M8 12h8"></path>
-        </svg>
-        <span>Chat with AI</span>
-    </a>
+<!-- story thread — vertical spine with scroll-filled line -->
+<div class="story-thread" id="story-thread">
+    <div class="fill" id="thread-fill"></div>
+    <div class="node" data-section="hero" style="top:5%"></div>
+    <div class="node" data-section="featured" style="top:15%"></div>
+    <div class="node" data-section="about" style="top:30%"></div>
+    <div class="node" data-section="work" style="top:45%"></div>
+    <div class="node" data-section="projects" style="top:60%"></div>
+    <div class="node" data-section="pubs" style="top:74%"></div>
+    <div class="node" data-section="skills" style="top:86%"></div>
+    <div class="node" data-section="contact" style="top:96%"></div>
+</div>
 
-    <!-- Page Transition Overlay (Balloon Cluster) -->
-    <div id="page-transition" style="position: fixed; inset: 0; z-index: 9999; background: #05070a; opacity: 0; pointer-events: none; transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);">
-        <canvas id="balloon-canvas" style="position: absolute; inset: 0; width: 100%; height: 100%;"></canvas>
-        <div style="position: absolute; bottom: 36%; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.25); font-family: monospace; font-size: 0.65rem; letter-spacing: 0.28em; white-space: nowrap;">LOADING...</div>
+<!-- custom cursor -->
+<div class="cursor-ring"></div>
+<div class="cursor-dot"></div>
+
+<!-- preloader -->
+<div id="loader">
+    <div class="loader-kicker">LOADING...</div>
+    <div class="loader-count">0</div>
+    <div class="loader-bar"><i></i></div>
+    <div class="loader-label">data science · biological AI · interactive tools</div>
+</div>
+
+<!-- nav -->
+<nav class="navbar">
+    <a href="#top" class="logo magnetic" data-mag="0.25">Alex<b>.</b></a>
+    <div class="menu-toggle"><span></span><span></span><span></span></div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Research</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="https://guangyuwanglab.github.io/web/index.html" target="_blank" rel="noopener" class="nav-cta">🔗 Lab Website</a>
     </div>
+</nav>
+
+<!-- ===== Smooth scroll wrapper holds everything that scrolls ===== -->
+<div id="smooth-wrapper">
+<main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-chips">
+            <span class="chip" data-speed="0.14" style="top:18%; left:6%;">spatial transcriptomics</span>
+            <span class="chip" data-speed="-0.12" style="top:30%; right:8%;">whole-slide imaging</span>
+            <span class="chip" data-speed="0.1" style="bottom:30%; left:10%;">single-cell omics</span>
+            <span class="chip" data-speed="-0.16" style="bottom:22%; right:12%;">deep learning</span>
+        </div>
+        <div class="hero-status reveal" data-hero>
+            <span class="pulse"></span> Houston, TX
+        </div>
+        <h1>
+            <span class="line reveal" data-hero><span>Tu N <em style="font-style:normal;color:var(--muted-2);font-weight:400;">(Alex)</em></span></span>
+            <span class="line reveal" data-hero><span class="grad">Tran</span></span>
+        </h1>
+        <p class="hero-sub reveal" data-hero>
+            Graduate student in <b>Engineering Data Science and AI</b> building intelligent tools for biological and multimodal data analysis.
+        </p>
+        <div class="hero-actions reveal" data-hero>
+            <a href="#featured" class="btn btn-primary magnetic" data-mag="0.3">
+                See Loki in Action
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#projects" class="btn btn-ghost magnetic" data-mag="0.3">All Projects</a>
+            <a href="Resume/TuNTran_Resume_DataScience.pdf" target="_blank" rel="noopener" class="btn btn-ghost magnetic" data-mag="0.3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+                Download Resume
+            </a>
+        </div>
+        <div class="hero-scroll"><span class="ln"></span> Scroll to explore</div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>Python<span class="o">Dash &amp; Plotly</span>React<span class="o">Machine Learning</span>Spatial Omics<span class="o">Nature Methods</span></span>
+            <span>Python<span class="o">Dash &amp; Plotly</span>React<span class="o">Machine Learning</span>Spatial Omics<span class="o">Nature Methods</span></span>
+        </div>
+    </div>
+
+    <!-- FEATURED: Loki -->
+        <div class="story-bridge" data-screen-label="Bridge: The Question">
+        <div class="bridge-number reveal">Chapter 01</div>
+        <p class="bridge-text reveal">It started with a <span class="grad">question</span></p>
+        <p class="bridge-accent reveal">Can AI see what pathologists see — and bring that power to every researcher's browser?</p>
+    </div>
+
+    <section id="featured" class="atmo-featured">
+        <div class="container">
+            <div class="eyebrow reveal" data-num="01 /">Featured Build</div>
+            <h2 class="section-head" data-anim="left">Interactive Web Platform for Loki — <span class="stroke">Whole-Slide Image Analysis</span></h2>
+            <div class="featured-card">
+                <div class="featured-text" data-anim="right">
+                    <a href="https://www.nature.com/articles/s41592-025-02707-1" target="_blank" rel="noopener" class="pub-badge">
+                        📄 Nature Methods (2025) — Co-author
+                    </a>
+                    <p>Engineering a full-stack interactive platform on top of Loki, a published AI framework (Nature Methods, 2025) for spatial transcriptomics and histopathology. The platform enables researchers to run deep learning inference on gigapixel whole-slide H&amp;E images directly from the browser — no local Python environment or CLI required.</p>
+                    <ul class="research-list">
+                        <li>Built a Dash/React frontend that interfaces with Loki’s deep learning inference pipeline for nuclei segmentation and cell-type annotation on whole-slide histopathology images.</li>
+                        <li>Streamed and rendered gigapixel whole-slide images interactively in the browser with color-coded cell-type overlays.</li>
+                        <li>Integrated an LLM-powered AI chatbot for on-demand pathological interpretation of segmented cell types and tissue microenvironments.</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span>Python</span><span>Dash</span><span>React</span><span>HPC AI</span>
+                    </div>
+                </div>
+                <div class="featured-visual">
+                    <div class="browser" id="loki-demo" title="Click to expand demo">
+                        <div class="browser-bar">
+                            <i></i><i></i><i></i>
+                            <span class="url">loki.inference / whole-slide-viewer</span>
+                            <span class="expand-hint">⛶ Click to expand</span>
+                        </div>
+                        <div class="browser-img" data-anim="mask">
+                            <video autoplay loop muted playsinline preload="metadata">
+                                <source src="assets/media/video-output-93379EFF-196A-41BA-AFCC-0204CE584930-3.MP4" type="video/mp4">
+                            </video>
+                            <div class="video-fallback">
+                                <p>Your browser does not support the video tag.</p>
+                            </div>
+                            <div class="browser-glow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+        <div class="story-bridge" data-screen-label="Bridge: The Mission">
+        <div class="bridge-number reveal">Chapter 02</div>
+        <p class="bridge-text reveal">The answer became a <span class="grad">mission</span></p>
+    </div>
+
+    <section id="about" class="atmo-about">
+        <div class="container">
+            <div class="eyebrow reveal" data-num="02 /">Summary</div>
+            <div class="about-grid">
+                <div class="about-portrait" data-anim="left">
+                    <div class="ring"></div>
+                    <div class="frame"><img src="assets/media/Alex.png" alt="Tu N (Alex) Tran"></div>
+                </div>
+                <div class="about-text" data-anim="right">
+                    <p>I am a Graduate student in <b>Engineering Data Science and AI</b> with experience applying statistical modeling, machine learning, and data visualization to biological and engineering problems.</p>
+                    <p>I am highly skilled in <b>Python, R, SQL (in progress), and cloud-based workflows</b>. My core expertise lies in building end-to-end pipelines, cleaning and structuring large datasets, and developing precise interactive dashboards.</p>
+                    <p>Currently, I am seeking a <b>Data Science internship</b> to leverage my analytical skills and programming expertise for data-driven decision making.</p>
+                    <div class="about-facts">
+                        <div><div class="num">2</div><div class="lbl">Nature-family papers</div></div>
+                        <div><div class="num">3.63</div><div class="lbl">Graduate GPA</div></div>
+                        <div><div class="num">3+</div><div class="lbl">Years in research</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK + EDUCATION -->
+        <div class="story-bridge" data-screen-label="Bridge: The Craft">
+        <div class="bridge-number reveal">Chapter 03</div>
+        <p class="bridge-text reveal">Every dataset sharpened the <span class="grad">craft</span></p>
+    </div>
+
+    <section id="work" class="atmo-work">
+        <div class="container">
+            <div class="eyebrow reveal" data-num="03 /">Experience</div>
+            <h2 class="section-head reveal">Work <span class="stroke">Experience</span></h2>
+            <div class="timeline">
+                <article class="tl-item reveal">
+                    <div class="tl-glow"></div>
+                    <div class="tl-meta">
+                        <div class="date">Dec 2022 – Present</div>
+                        <div class="co">Houston Methodist, Dr. Guangyu Wang Lab</div>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Research Assistant – Cardiovascular Regeneration Program</h3>
+                        <ul>
+                            <li>Built data pipelines for large-scale single-cell and spatial omics datasets to support machine learning model development and evaluation.</li>
+                            <li>Applied unsupervised learning and statistical analysis to identify patterns in high-dimensional biological data.</li>
+                            <li>Assessed model predictions and validated outputs against biological signals to ensure reliability and interpretability.</li>
+                            <li>Developed interactive dashboards for visualization and interpretation of model results by research teams.</li>
+                            <li>Contributed to a Nature Methods publication on AI-driven multimodal analysis.</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="tl-item reveal">
+                    <div class="tl-glow"></div>
+                    <div class="tl-meta">
+                        <div class="date">Jan 2022 – Aug 2022</div>
+                        <div class="co">Viet Power Solutions JSC (Vietnam)</div>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Marketing &amp; Data Intern</h3>
+                        <ul>
+                            <li>Monitored digital engagement metrics with Google Analytics and optimized campaigns for +39.5% performance improvement.</li>
+                            <li>Designed and launched targeted LinkedIn, Facebook, and Google Ads campaigns, raising user engagement by 50%.</li>
+                            <li>Produced clear, data-driven reports to inform leadership and refine product strategy.</li>
+                        </ul>
+                    </div>
+                </article>
+                <div class="eyebrow reveal" style="margin-bottom:0;">Education</div>
+                <article class="tl-item reveal">
+                    <div class="tl-glow"></div>
+                    <div class="tl-meta">
+                        <div class="date">Expected January 2027</div>
+                        <div class="co">University of Houston, Cullen College of Engineering</div>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Master of Science in Engineering Data Science and AI</h3>
+                        <ul>
+                            <li><strong>GPA:</strong> 3.63</li>
+                            <li>Houston, TX</li>
+                        </ul>
+                    </div>
+                </article>
+                <article class="tl-item reveal">
+                    <div class="tl-glow"></div>
+                    <div class="tl-meta">
+                        <div class="date">Aug 2017 – Aug 2021</div>
+                        <div class="co">University of Massachusetts Lowell</div>
+                    </div>
+                    <div class="tl-body">
+                        <h3>Bachelor of Science in Mathematics</h3>
+                        <ul>
+                            <li><strong>Minor:</strong> Finance</li>
+                            <li>Dean’s List 2020–2021</li>
+                            <li><strong>GPA:</strong> 3.135</li>
+                            <li>Lowell, MA</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS — pinned horizontal scroll gallery -->
+        <div class="story-bridge" data-screen-label="Bridge: The Tools">
+        <div class="bridge-number reveal">Chapter 04</div>
+        <p class="bridge-text reveal">So I built the <span class="grad">tools</span></p>
+        <p class="bridge-accent reveal">From pipelines to platforms — each project a step closer to making data speak.</p>
+    </div>
+
+    <section id="projects" class="hsection atmo-projects">
+        <div class="hpin">
+            <div class="hpin-head container">
+                <div class="eyebrow" data-num="04 /">Selected Work</div>
+                <h2 class="section-head" style="margin-bottom:0;">Relevant <span class="stroke">Projects</span></h2>
+            </div>
+            <div class="htrack">
+                <article class="proj-card hcard">
+                    <div class="pc-glow"></div>
+                    <div class="proj-index">01</div>
+                    <div class="proj-tag">Fullstack Platform (HM)</div>
+                    <h3>Loki Interactive Inference Platform</h3>
+                    <p>Developed a full-stack web platform for spatial transcriptomics and histopathology. Built a Dash/React interface for deep learning inference on gigapixel H&amp;E images directly from the browser.</p>
+                    <div class="tech-stack"><span>Dash</span><span>React</span><span>AI</span><span>Nature Methods ⭐</span></div>
+                </article>
+                <article class="proj-card hcard">
+                    <div class="pc-glow"></div>
+                    <div class="proj-index">02</div>
+                    <div class="proj-tag">Data Visualization (HM)</div>
+                    <h3>Mjolnir</h3>
+                    <p>Built an interactive data visualization platform using Python (Dash, Plotly) for exploration of multimodal datasets. Integrated gigapixel histology images with gene expression and pathway analysis to enable intuitive exploration by non-technical users.</p>
+                    <div class="tech-stack"><span>Python</span><span>Dash</span><span>Plotly</span><span>Nature Communications</span></div>
+                </article>
+                <article class="proj-card hcard">
+                    <div class="pc-glow"></div>
+                    <div class="proj-index">03</div>
+                    <div class="proj-tag">Data Integration (HM)</div>
+                    <h3>Visual–Omics Curation</h3>
+                    <p>Curated a multimodal dataset linking histology images with spatial gene expression across 32 organs. Built diagnostics to evaluate machine learning models, heavily contributing to a Nature Methods publication.</p>
+                    <div class="tech-stack"><span>Curation</span><span>Diagnostics</span><span>Python</span></div>
+                </article>
+                <article class="proj-card hcard">
+                    <div class="pc-glow"></div>
+                    <div class="proj-index">04</div>
+                    <div class="proj-tag">Bioinformatics (HM)</div>
+                    <h3>Macrophage Analysis</h3>
+                    <p>Applied Leiden clustering and UMAP to identify and interpret immune cell subtypes from single-cell datasets. Developed Python pipelines for reproducible exploratory analysis.</p>
+                    <div class="tech-stack"><span>UMAP</span><span>Leiden</span><span>Python</span></div>
+                </article>
+            </div>
+            <div class="hbar-row container">
+                <div class="hpin-hint"><span class="ln"></span> Scroll — cards move sideways</div>
+                <div class="hbar"><i></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+        <div class="story-bridge" data-screen-label="Bridge: The Impact">
+        <div class="bridge-number reveal">Chapter 05</div>
+        <p class="bridge-text reveal">The work made it to <span class="grad">print</span></p>
+    </div>
+
+    <section id="publications" class="atmo-pubs">
+        <div class="container">
+            <div class="eyebrow reveal" data-num="05 /">Research</div>
+            <h2 class="section-head reveal"><span class="stroke">Publications</span></h2>
+            <div class="pubs">
+                <article class="pub" data-anim="left">
+                    <div class="pub-meta">
+                        <div class="journal">Nature Methods</div>
+                        <div class="year">2025 · Co-author</div>
+                    </div>
+                    <div>
+                        <h3><a href="https://doi.org/10.1038/s41592-025-02707-1" target="_blank" rel="noopener">A visual–omics foundation model to bridge histopathology with spatial transcriptomics</a></h3>
+                        <div class="authors">Chen W., Zhang P., <u>Tran T. N.</u>, et al. (2025). <em>Nature Methods</em>.</div>
+                        <a class="doi" href="https://doi.org/10.1038/s41592-025-02707-1" target="_blank" rel="noopener">doi:10.1038/s41592-025-02707-1</a>
+                    </div>
+                </article>
+                <article class="pub" data-anim="right">
+                    <div class="pub-meta">
+                        <div class="journal">Nature Communications</div>
+                        <div class="year">2025 · Co-author</div>
+                    </div>
+                    <div>
+                        <h3><a href="https://doi.org/10.1038/s41467-025-62593-1" target="_blank" rel="noopener">Thor: a platform for cell-level investigation of spatial transcriptomics and histology</a></h3>
+                        <div class="authors">Zhang P., Chen W., <u>Tran T. N.</u>, et al. (2025). <em>Nature Communications</em>, 16, 7178.</div>
+                        <a class="doi" href="https://doi.org/10.1038/s41467-025-62593-1" target="_blank" rel="noopener">doi:10.1038/s41467-025-62593-1</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+        <div class="story-bridge" data-screen-label="Bridge: The Toolkit">
+        <div class="bridge-number reveal">Chapter 06</div>
+        <p class="bridge-text reveal">Always expanding the <span class="grad">toolkit</span></p>
+    </div>
+
+    <section id="skills" class="atmo-skills">
+        <div class="container">
+            <div class="eyebrow reveal" data-num="06 /">Toolkit</div>
+            <h2 class="section-head reveal"><span class="stroke">Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-cat reveal">
+                    <h3>Programming</h3>
+                    <ul><li>Python (Pandas, NumPy, SciPy, scikit-learn, Plotly, Dash)</li><li>R (tidyverse, Seurat)</li><li>HTML/CSS</li></ul>
+                </div>
+                <div class="skill-cat reveal d1">
+                    <h3>Data Science</h3>
+                    <ul><li>Data Wrangling</li><li>Statistical Modeling &amp; Hypothesis Testing</li><li>Clustering &amp; Dimensionality Reduction</li><li>Pathway Enrichment</li></ul>
+                </div>
+                <div class="skill-cat reveal d2">
+                    <h3>Machine Learning</h3>
+                    <ul><li>scikit-learn</li><li>Trajectory Inference</li><li>Model Diagnostics</li><li>Evaluation Metrics</li></ul>
+                </div>
+                <div class="skill-cat reveal">
+                    <h3>Data Engineering</h3>
+                    <ul><li>Snakemake &amp; Git</li><li>Linux &amp; AWS (EC2/S3)</li><li>Data Preprocessing &amp; Automation</li></ul>
+                </div>
+                <div class="skill-cat reveal d1">
+                    <h3>Visualization</h3>
+                    <ul><li>Dash/Plotly</li><li>Matplotlib, Seaborn</li><li>Interactive Dashboards</li></ul>
+                </div>
+                <div class="skill-cat reveal d2">
+                    <h3>In Progress</h3>
+                    <ul><li>SQL</li><li>A/B Testing</li><li>Tableau / Looker</li></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+        <div class="story-bridge tall" data-screen-label="Bridge: The Future">
+        <div class="bridge-number reveal">The next chapter</div>
+        <p class="bridge-text reveal">What will we <span class="grad">build</span> together?</p>
+    </div>
+
+    <section id="contact" class="atmo-contact">
+        <div class="container contact">
+            <div class="eyebrow reveal" data-num="07 /" style="justify-content:center;">Contact</div>
+            <h2 class="contact-lead reveal">Let's<br><span class="grad">connect.</span></h2>
+            <p class="reveal d1">I am seeking a Data Science internship to leverage my analytical skills and programming expertise for data-driven decision making. Let's connect!</p>
+            <div class="contact-actions reveal d2">
+                <a href="mailto:ttran177@uh.edu" class="btn btn-primary magnetic" data-mag="0.3">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                    <span>ttran177@uh.edu</span>
+                </a>
+                <a href="Resume/TuNTran_Resume_DataScience.pdf" target="_blank" rel="noopener" class="btn btn-ghost magnetic" data-mag="0.3">Download Resume</a>
+            </div>
+            <div class="social-row reveal d3">
+                <a href="https://linkedin.com/in/tuntran271299" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="tel:3465150455" aria-label="Phone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; Tu N (Alex) Tran. Designed &amp; Built manually with raw code.</p>
-        </div>
+        <p>&copy; Tu N (Alex) Tran. Designed &amp; Built manually with raw code.</p>
+        <a href="#top" class="top">Back to top ↑</a>
     </footer>
-    <script src="js/script.js"></script>
-    <script>
-        // ── Bouncing Cluster Animation ─────────────────────────────────────
-        var bCanvas = document.getElementById('balloon-canvas');
-        var bCtx = bCanvas.getContext('2d');
-        var bRAF = null, bStart = null, bLocked = false;
-        var bPalette = ['#f43f5e','#ec4899','#a855f7','#7c3aed','#3b82f6','#2dd4bf'];
 
-        // Tight overlapping cluster — whole thing jumps together
-        var bCells = [
-            {bx:0,   by:0,   r:28, col:'#f43f5e', sp:0.50, off:0.0, fr:3, glow:false},
-            {bx:-27, by:-9,  r:18, col:'#7c3aed', sp:0.70, off:1.2, fr:3, glow:false},
-            {bx:25,  by:-21, r:13, col:'#2dd4bf', sp:0.90, off:2.1, fr:3, glow:true },
-            {bx:-17, by:27,  r:15, col:'#3b82f6', sp:0.60, off:3.5, fr:3, glow:false},
-            {bx:30,  by:12,  r:11, col:'#ec4899', sp:1.10, off:0.8, fr:3, glow:false},
-            {bx:6,   by:31,  r:13, col:'#a855f7', sp:0.80, off:4.2, fr:3, glow:false},
-            {bx:-36, by:6,   r:15, col:'#3b82f6', sp:0.65, off:1.8, fr:3, glow:false},
-            {bx:-7,  by:-35, r:10, col:'#f43f5e', sp:1.00, off:2.6, fr:3, glow:false},
-            {bx:13,  by:-37, r:12, col:'#a855f7', sp:0.75, off:5.1, fr:3, glow:false},
-            {bx:42,  by:21,  r:8,  col:'#ec4899', sp:1.20, off:3.0, fr:2, glow:false},
-            {bx:-29, by:37,  r:11, col:'#f43f5e', sp:0.85, off:0.5, fr:2, glow:false},
-            {bx:33,  by:-39, r:8,  col:'#2dd4bf', sp:1.30, off:1.4, fr:2, glow:true },
-            {bx:-48, by:-17, r:7,  col:'#ec4899', sp:0.95, off:3.8, fr:2, glow:false},
-            {bx:48,  by:-7,  r:6,  col:'#7c3aed', sp:1.10, off:2.4, fr:2, glow:false},
-            {bx:-57, by:24,  r:5,  col:'#f43f5e', sp:1.40, off:4.6, fr:2, glow:false},
-            {bx:57,  by:13,  r:4,  col:'#3b82f6', sp:1.50, off:0.2, fr:1, glow:false},
-            {bx:-12, by:57,  r:6,  col:'#a855f7', sp:1.20, off:2.9, fr:2, glow:false},
-            {bx:21,  by:54,  r:5,  col:'#ec4899', sp:1.60, off:5.5, fr:1, glow:false},
-            {bx:-60, by:-7,  r:4,  col:'#2dd4bf', sp:1.10, off:1.1, fr:2, glow:true },
-            {bx:51,  by:-42, r:6,  col:'#7c3aed', sp:0.90, off:4.0, fr:2, glow:false},
-            {bx:-31, by:-54, r:4,  col:'#3b82f6', sp:1.30, off:2.2, fr:1, glow:false},
-        ];
+</main>
+</div><!-- /smooth-wrapper -->
 
-        var bStars = [];
-        for (var i = 0; i < 160; i++) {
-            bStars.push({x:Math.random(),y:Math.random(),r:Math.random()<0.2?1.5:0.7,col:bPalette[Math.floor(Math.random()*bPalette.length)],op:0.1+Math.random()*0.22,tw:Math.random()*10});
-        }
-
-        function resizeBCanvas() { bCanvas.width = window.innerWidth; bCanvas.height = window.innerHeight; }
-        resizeBCanvas();
-        window.addEventListener('resize', resizeBCanvas);
-
-        function drawBalloons(ts) {
-            if (!bStart) bStart = ts;
-            var t = (ts - bStart) / 1000;
-            var w = bCanvas.width, h = bCanvas.height, cx = w / 2, cy = h / 2;
-            bCtx.clearRect(0, 0, w, h);
-            bCtx.fillStyle = '#05070a';
-            bCtx.fillRect(0, 0, w, h);
-            // Stars
-            bStars.forEach(function(s) {
-                bCtx.beginPath(); bCtx.arc(s.x*w, s.y*h, s.r, 0, Math.PI*2);
-                bCtx.globalAlpha = s.op * (0.5 + 0.5*Math.sin(t*1.5 + s.tw));
-                bCtx.fillStyle = s.col; bCtx.fill();
-            });
-            bCtx.globalAlpha = 1;
-
-            // Whole-cluster jump — one bounce drives everything
-            var bounce = bLocked ? 1.0 : Math.abs(Math.sin(t * 1.1)); // 0=ground, 1=peak
-            var jumpY  = bounce * 45;
-            var sqX    = 1.0 + (1 - bounce) * 0.06;  // cluster widens at ground
-            var sqY    = 1.0 - (1 - bounce) * 0.06;  // cluster flattens at ground
-
-            bCtx.save();
-            bCtx.translate(cx, cy - jumpY);
-            bCtx.scale(sqX, sqY);
-
-            bCells.forEach(function(c) {
-                var fx = Math.sin(t * c.sp + c.off) * c.fr; // subtle wobble per cell
-                var fy = Math.cos(t * c.sp * 0.8 + c.off) * c.fr;
-                var x = c.bx + fx, y = c.by + fy;
-                if (c.glow) {
-                    var g = bCtx.createRadialGradient(x, y, 0, x, y, c.r * 2.8);
-                    g.addColorStop(0, c.col + '99'); g.addColorStop(1, 'transparent');
-                    bCtx.beginPath(); bCtx.arc(x, y, c.r * 2.8, 0, Math.PI*2);
-                    bCtx.fillStyle = g; bCtx.fill();
-                }
-                bCtx.beginPath(); bCtx.arc(x, y, c.r, 0, Math.PI*2);
-                bCtx.fillStyle = c.col; bCtx.fill();
-            });
-
-            bCtx.restore();
-            bRAF = requestAnimationFrame(drawBalloons);
-        }
-
-        function startBalloons() { bStart = null; bRAF = requestAnimationFrame(drawBalloons); }
-        function stopBalloons()  { if (bRAF) { cancelAnimationFrame(bRAF); bRAF = null; } }
-    </script>
-
-    <div class="video-modal" id="video-modal">
-        <div class="video-modal-content">
-            <button class="video-modal-close" id="video-modal-close">&times;</button>
-            <video id="modal-video" controls>
-                <source src="assets/media/video-output-93379EFF-196A-41BA-AFCC-0204CE584930-3.MP4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+<!-- Loki demo lightbox -->
+<div class="video-modal" id="video-modal">
+    <div class="video-modal-inner">
+        <button class="video-modal-close" id="video-close" aria-label="Close">&times;</button>
+        <video id="modal-video" controls playsinline>
+            <source src="assets/media/video-output-93379EFF-196A-41BA-AFCC-0204CE584930-3.MP4" type="video/mp4">
+        </video>
     </div>
+</div>
 
-    <script>
-        // ── Navigation handlers ───────────────────────────────────────────
-        document.getElementById('ai-nav-btn')?.addEventListener('click', function(e) {
-            e.preventDefault();
-            bLocked = true;
-            var overlay = document.getElementById('page-transition');
-            overlay.style.pointerEvents = 'all';
-            overlay.style.opacity = '1';
-            startBalloons();
-            setTimeout(function() { window.location.href = 'ai.html'; }, 600);
-        });
+<!-- floating AI button -->
+<a href="ai.html" class="ai-fab magnetic" data-mag="0.25">
+    <span class="ping"></span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-4 0V4a2 2 0 0 1 2-2z"/><path d="M12 8a6 6 0 0 0-6 6v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4a6 6 0 0 0-6-6z"/><path d="M8 14h8"/></svg>
+    Chat with AI
+</a>
 
-        // Reset overlay when browser restores page from back-forward cache
-        window.addEventListener('pageshow', function() {
-            var overlay = document.getElementById('page-transition');
-            if (overlay) {
-                overlay.style.opacity = '0';
-                overlay.style.pointerEvents = 'none';
-            }
-            bLocked = false;
-            stopBalloons();
-        });
-    </script>
+<script src="js/portfolio.js"></script>
+<script>
+/* Story scroll glue — exposes __scrollProgress for the 3D model
+   and drives the story-thread fill + node reveals.
+   Native scroll is used (smooth scroll disabled in portfolio-v3.js),
+   so IntersectionObserver and scroll-scrubbed animations work normally. */
+(function () {
+  'use strict';
+  var fill = document.getElementById('thread-fill');
+  var threadNodes = document.querySelectorAll('.story-thread .node');
+
+  function update() {
+    var vh = window.innerHeight;
+    var max = Math.max(1, document.documentElement.scrollHeight - vh);
+    var p = Math.min(1, Math.max(0, (window.scrollY || 0) / max));
+    window.__scrollProgress = p;
+
+    if (fill) fill.style.height = (p * 100) + '%';
+    threadNodes.forEach(function (n) {
+      var nodePos = parseFloat(n.style.top) / 100;
+      n.classList.toggle('visible', p >= nodePos - 0.02);
+    });
+  }
+
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
 </body>
+</html>

@@ -15,7 +15,7 @@ function AiEngram({ isNarrating }: { isNarrating: boolean }) {
   // Generate random data for the cells so they don't regenerate every frame
   const cells = useMemo(() => {
     const arr = [];
-    const palette = ['#f43f5e', '#ec4899', '#a855f7', '#7e22ce', '#3b82f6', '#2dd4bf'];
+    const palette = ['#b08d57', '#c8a06a', '#cdb389', '#8a6c3f', '#c8a06a', '#b08d57'];
     
     for (let i = 0; i < 80; i++) {
       // Gaussian-like distribution to make it dense in the center, sparse on edges
@@ -67,7 +67,7 @@ function AiEngram({ isNarrating }: { isNarrating: boolean }) {
       {/* Singular hidden anchor point so the cluster feels dense in the exact center */}
       <mesh>
         <sphereGeometry args={[0.5, 32, 32]} />
-        <meshBasicMaterial color="#f43f5e" />
+        <meshBasicMaterial color="#b08d57" />
       </mesh>
 
       {/* Orbiting cellular dots */}
@@ -93,17 +93,17 @@ export function NeuralCanvas() {
 
   return (
     <>
-      <color attach="background" args={['#05070a']} />
-      <ambientLight intensity={0.15} color="#a855f7" />
-      <pointLight position={[0, 3, 5]} intensity={3} color="#ec4899" />
-      <pointLight position={[-4, -2, 3]} intensity={1} color="#7e22ce" />
-      <pointLight position={[4, 1, 2]} intensity={0.8} color="#be185d" />
+      <color attach="background" args={['#0a0609']} />
+      <ambientLight intensity={0.15} color="#cdb389" />
+      <pointLight position={[0, 3, 5]} intensity={3} color="#c8a06a" />
+      <pointLight position={[-4, -2, 3]} intensity={1} color="#8a6c3f" />
+      <pointLight position={[4, 1, 2]} intensity={0.8} color="#6e1828" />
 
       <AiEngram isNarrating={isNarrating} />
       <ParticleField count={3000} />
 
       <EffectComposer>
-        <Bloom luminanceThreshold={0.15} luminanceSmoothing={0.9} intensity={2.5} />
+        <Bloom luminanceThreshold={0.32} luminanceSmoothing={0.9} intensity={0.85} />
       </EffectComposer>
     </>
   );

@@ -9,10 +9,10 @@ export function ParticleField({ count = 5000 }) {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     const palette = [
-      new THREE.Color('#2dd4bf'), // teal
-      new THREE.Color('#3b82f6'), // dodger blue
-      new THREE.Color('#a855f7'), // purple
-      new THREE.Color('#ec4899'), // pink
+      new THREE.Color('#b08d57'), // gold
+      new THREE.Color('#c8a06a'), // brass
+      new THREE.Color('#cdb389'), // light gold
+      new THREE.Color('#5c1526'), // oxblood
     ];
 
     for (let i = 0; i < count; i++) {

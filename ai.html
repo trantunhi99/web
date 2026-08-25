@@ -6,7 +6,7 @@
     <title>Tu N (Alex) Tran | AI Neural Interface</title>
     <link rel="icon" type="image/svg+xml" href="assets/media/favicon.svg?v=3">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #05070a; }
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; overflow: hidden; background-color: #0a0609; }
         iframe { width: 100vw; height: 100vh; border: none; display: block; margin: 0; padding: 0; }
         #entry-overlay {
             position: fixed; inset: 0; z-index: 9999;
@@ -28,29 +28,29 @@
         var bCanvas = document.getElementById('balloon-canvas');
         var bCtx = bCanvas.getContext('2d');
         var bRAF = null, bStart = null;
-        var bPalette = ['#f43f5e','#ec4899','#a855f7','#7c3aed','#3b82f6','#2dd4bf'];
+        var bPalette = ['#b08d57','#c8a06a','#8a6c3f','#5c1526','#cdb389','#ece3d2'];
         var bCells = [
-            {bx:0,   by:0,   r:28, col:'#f43f5e', sp:0.50, off:0.0, fr:3, glow:false},
-            {bx:-27, by:-9,  r:18, col:'#7c3aed', sp:0.70, off:1.2, fr:3, glow:false},
-            {bx:25,  by:-21, r:13, col:'#2dd4bf', sp:0.90, off:2.1, fr:3, glow:true },
-            {bx:-17, by:27,  r:15, col:'#3b82f6', sp:0.60, off:3.5, fr:3, glow:false},
-            {bx:30,  by:12,  r:11, col:'#ec4899', sp:1.10, off:0.8, fr:3, glow:false},
-            {bx:6,   by:31,  r:13, col:'#a855f7', sp:0.80, off:4.2, fr:3, glow:false},
-            {bx:-36, by:6,   r:15, col:'#3b82f6', sp:0.65, off:1.8, fr:3, glow:false},
-            {bx:-7,  by:-35, r:10, col:'#f43f5e', sp:1.00, off:2.6, fr:3, glow:false},
-            {bx:13,  by:-37, r:12, col:'#a855f7', sp:0.75, off:5.1, fr:3, glow:false},
-            {bx:42,  by:21,  r:8,  col:'#ec4899', sp:1.20, off:3.0, fr:2, glow:false},
-            {bx:-29, by:37,  r:11, col:'#f43f5e', sp:0.85, off:0.5, fr:2, glow:false},
-            {bx:33,  by:-39, r:8,  col:'#2dd4bf', sp:1.30, off:1.4, fr:2, glow:true },
-            {bx:-48, by:-17, r:7,  col:'#ec4899', sp:0.95, off:3.8, fr:2, glow:false},
-            {bx:48,  by:-7,  r:6,  col:'#7c3aed', sp:1.10, off:2.4, fr:2, glow:false},
-            {bx:-57, by:24,  r:5,  col:'#f43f5e', sp:1.40, off:4.6, fr:2, glow:false},
-            {bx:57,  by:13,  r:4,  col:'#3b82f6', sp:1.50, off:0.2, fr:1, glow:false},
-            {bx:-12, by:57,  r:6,  col:'#a855f7', sp:1.20, off:2.9, fr:2, glow:false},
-            {bx:21,  by:54,  r:5,  col:'#ec4899', sp:1.60, off:5.5, fr:1, glow:false},
-            {bx:-60, by:-7,  r:4,  col:'#2dd4bf', sp:1.10, off:1.1, fr:2, glow:true },
-            {bx:51,  by:-42, r:6,  col:'#7c3aed', sp:0.90, off:4.0, fr:2, glow:false},
-            {bx:-31, by:-54, r:4,  col:'#3b82f6', sp:1.30, off:2.2, fr:1, glow:false},
+            {bx:0,   by:0,   r:28, col:'#b08d57', sp:0.50, off:0.0, fr:3, glow:false},
+            {bx:-27, by:-9,  r:18, col:'#5c1526', sp:0.70, off:1.2, fr:3, glow:false},
+            {bx:25,  by:-21, r:13, col:'#ece3d2', sp:0.90, off:2.1, fr:3, glow:true },
+            {bx:-17, by:27,  r:15, col:'#cdb389', sp:0.60, off:3.5, fr:3, glow:false},
+            {bx:30,  by:12,  r:11, col:'#c8a06a', sp:1.10, off:0.8, fr:3, glow:false},
+            {bx:6,   by:31,  r:13, col:'#8a6c3f', sp:0.80, off:4.2, fr:3, glow:false},
+            {bx:-36, by:6,   r:15, col:'#cdb389', sp:0.65, off:1.8, fr:3, glow:false},
+            {bx:-7,  by:-35, r:10, col:'#b08d57', sp:1.00, off:2.6, fr:3, glow:false},
+            {bx:13,  by:-37, r:12, col:'#8a6c3f', sp:0.75, off:5.1, fr:3, glow:false},
+            {bx:42,  by:21,  r:8,  col:'#c8a06a', sp:1.20, off:3.0, fr:2, glow:false},
+            {bx:-29, by:37,  r:11, col:'#b08d57', sp:0.85, off:0.5, fr:2, glow:false},
+            {bx:33,  by:-39, r:8,  col:'#ece3d2', sp:1.30, off:1.4, fr:2, glow:true },
+            {bx:-48, by:-17, r:7,  col:'#c8a06a', sp:0.95, off:3.8, fr:2, glow:false},
+            {bx:48,  by:-7,  r:6,  col:'#5c1526', sp:1.10, off:2.4, fr:2, glow:false},
+            {bx:-57, by:24,  r:5,  col:'#b08d57', sp:1.40, off:4.6, fr:2, glow:false},
+            {bx:57,  by:13,  r:4,  col:'#cdb389', sp:1.50, off:0.2, fr:1, glow:false},
+            {bx:-12, by:57,  r:6,  col:'#8a6c3f', sp:1.20, off:2.9, fr:2, glow:false},
+            {bx:21,  by:54,  r:5,  col:'#c8a06a', sp:1.60, off:5.5, fr:1, glow:false},
+            {bx:-60, by:-7,  r:4,  col:'#ece3d2', sp:1.10, off:1.1, fr:2, glow:true },
+            {bx:51,  by:-42, r:6,  col:'#5c1526', sp:0.90, off:4.0, fr:2, glow:false},
+            {bx:-31, by:-54, r:4,  col:'#cdb389', sp:1.30, off:2.2, fr:1, glow:false},
         ];
         var bStars = [];
         for (var i = 0; i < 160; i++) {
@@ -61,7 +61,7 @@
         function drawBalloons(ts) {
             if (!bStart) bStart=ts; var t=(ts-bStart)/1000;
             var w=bCanvas.width, h=bCanvas.height, cx=w/2, cy=h/2;
-            bCtx.clearRect(0,0,w,h); bCtx.fillStyle='#05070a'; bCtx.fillRect(0,0,w,h);
+            bCtx.clearRect(0,0,w,h); bCtx.fillStyle='#0a0609'; bCtx.fillRect(0,0,w,h);
             bStars.forEach(function(s) {
                 bCtx.beginPath(); bCtx.arc(s.x*w,s.y*h,s.r,0,Math.PI*2);
                 bCtx.globalAlpha=s.op*(0.5+0.5*Math.sin(t*1.5+s.tw)); bCtx.fillStyle=s.col; bCtx.fill();

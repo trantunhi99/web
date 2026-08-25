@@ -1,0 +1,162 @@
+/* ============================================================
+   Story layer — narrative bridges, atmosphere, flow
+   ============================================================ */
+
+/* ── 3D canvas: fixed full-viewport ── */
+#hero3d {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+#hero3d canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+/* Glow aura behind the model — follows the model via JS */
+#hero3d::after {
+  content: '';
+  position: fixed;
+  top: 50%; left: 50%;
+  width: 40vw; height: 40vw;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(92,21,38,0.18) 0%, rgba(110,24,40,0.05) 40%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Ensure content sits above the 3D layer — do NOT override position:fixed */
+#smooth-wrapper { z-index: 2 !important; }
+body.no-smooth #smooth-wrapper { z-index: 2 !important; }
+
+/* ── Narrative bridge sections ── */
+.story-bridge {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(4rem, 10vh, 8rem) clamp(1.25rem, 4vw, 3rem);
+  min-height: 40vh;
+  overflow: hidden;
+}
+.story-bridge.tall { min-height: 55vh; }
+
+/* Faint horizontal rule */
+.story-bridge::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: min(120px, 30vw);
+  height: 1px;
+  background: var(--grad);
+  opacity: 0.4;
+}
+
+.bridge-number {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.bridge-number.in { opacity: 1; transform: none; }
+
+.bridge-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4.5vw, 3.2rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+  max-width: 680px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+  transition-delay: 0.1s;
+}
+.bridge-text.in { opacity: 1; transform: none; }
+
+.bridge-text .grad {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bridge-accent {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.5;
+  margin-top: 1.2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transition-delay: 0.25s;
+}
+.bridge-accent.in { opacity: 1; transform: none; }
+
+/* ── Story thread — vertical spine ── */
+.story-thread {
+  position: fixed;
+  top: 0; bottom: 0;
+  left: clamp(1.5rem, 3vw, 3rem);
+  width: 1px;
+  z-index: 3;
+  pointer-events: none;
+  background: rgba(176,141,87,0.06);
+}
+.story-thread .fill {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom, rgba(176,141,87,0.35), rgba(92,21,38,0.15));
+  box-shadow: 0 0 6px rgba(176,141,87,0.2);
+  transition: height 0.05s linear;
+}
+.story-thread .node {
+  position: absolute;
+  left: 50%;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: var(--grad);
+  box-shadow: 0 0 10px rgba(176,141,87,0.5);
+  transition: transform 0.5s var(--ease);
+}
+.story-thread .node.visible { transform: translate(-50%, -50%) scale(1); }
+
+@media (max-width: 860px) {
+  .story-thread { display: none; }
+}
+
+/* ── Section atmosphere — subtle bg shifts ── */
+.atmo-featured { background: linear-gradient(180deg, transparent 0%, rgba(92,21,38,0.04) 40%, rgba(92,21,38,0.06) 60%, transparent 100%); }
+.atmo-about    { background: linear-gradient(180deg, transparent 0%, rgba(92,21,38,0.03) 50%, transparent 100%); }
+.atmo-work     { background: linear-gradient(180deg, transparent 0%, rgba(92,21,38,0.03) 50%, transparent 100%); }
+.atmo-projects { background: linear-gradient(180deg, transparent 0%, rgba(110,24,40,0.04) 50%, transparent 100%); }
+.atmo-pubs     { background: linear-gradient(180deg, transparent 0%, rgba(92,21,38,0.05) 40%, rgba(92,21,38,0.03) 70%, transparent 100%); }
+.atmo-skills   { background: linear-gradient(180deg, transparent 0%, rgba(110,24,40,0.03) 50%, transparent 100%); }
+.atmo-contact  { background: linear-gradient(180deg, transparent 0%, rgba(92,21,38,0.06) 50%, rgba(92,21,38,0.04) 80%, transparent 100%); }
+
+/* ── Enhanced section spacing for story pacing ── */
+.story-bridge + section .container { padding-top: clamp(3rem, 7vw, 5rem); }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .bridge-number, .bridge-text, .bridge-accent { opacity: 1 !important; transform: none !important; }
+}
