@@ -13,7 +13,7 @@ I specialize in bridging the gap between complex biological data and accessible,
 ## Contact
 - Date of Birth: December 27, 1999
 - Location: Houston, TX
-- Email: ttran177@uh.edu
+- Email: ttran247@CougarNet.UH.EDU
 - LinkedIn: linkedin.com/in/tuntran271299
 - Portfolio: https://alexthefirst99.github.io/web/
 - Lab: https://guangyuwanglab.github.io/web/index.html
