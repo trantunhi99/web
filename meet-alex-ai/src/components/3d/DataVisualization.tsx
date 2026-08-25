@@ -171,7 +171,7 @@ function ResearchViz() {
 // ─── Overview / Identity Card ───────────────────────────────────────────────
 function OverviewViz() {
   const stats = [
-    { label: 'MS GPA', value: '3.42' },
+    { label: 'MS GPA', value: '3.63' },
     { label: 'Publications', value: '2' },
     { label: 'Journal Tier', value: 'Nature' },
     { label: 'Role', value: 'Researcher' },

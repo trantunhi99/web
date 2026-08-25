@@ -249,7 +249,7 @@ const EDUCATION: { degree: string; school: string; dates: string; gpa: string; l
     degree: 'Master of Science in Engineering Data Science and AI',
     school: 'University of Houston, Cullen College of Engineering',
     dates: 'Expected January 2027',
-    gpa: '3.5',
+    gpa: '3.63',
     location: 'Houston, TX',
   },
   {
@@ -303,7 +303,7 @@ function OverviewPanel() {
   const stats = [
     { label: 'Degree', value: 'MS Eng. Data Science & AI' },
     { label: 'School', value: 'Univ. of Houston' },
-    { label: 'GPA', value: '3.5 / 4.0' },
+    { label: 'GPA', value: '3.63 / 4.0' },
     { label: 'Publications', value: '2 (Nature tier)' },
     { label: 'Current Role', value: 'Research Assistant' },
     { label: 'Status', value: 'Seeking Internship' },
